@@ -1,0 +1,54 @@
+<% if user_signed_in? %>
+  <aside class="sidebar">
+    <%= render 'notes/form' %>
+  </aside>
+  <ul class="notes">
+    <h2>投稿の一覧</h2>
+    <%= render @notes %>
+  </ul>
+<% else %>
+  <div class="top-wrapper">
+    <div class="register-wrapper">
+      <h1><%= @message %></h1>
+      <%= link_to "新規登録", new_user_registration_path, class: "btn btn-large register-btn " %>
+    </div>
+  </div>
+  <div class="bottom-wrapper">
+  <h2>サービス内容</h2>
+  <div class="service">
+    <div class="service-icon">
+    <h3>体験する</h3>
+    <%= image_tag("images/icon13.png") %>
+    <p>実際に海外でレストランを訪れたり観光したりしよう</p>
+    </div>
+  </div>
+
+ <div class="service">
+    <div class="service-icon">
+    <h3>記録する</h3>
+    <%= image_tag("images/icon12.png") %>
+    <p>海外での体験や経験をTorupに記録しよう</p>
+    </div>
+  </div>
+
+ <div class="service">
+    <div class="service-icon">
+    <h3>共有する</h3>
+    <%= image_tag("images/icon11.png") %>
+    <p>自分の海外での経験や体験をみんなに共有しよう</p>
+    </div>
+  </div>
+  </div>
+  <div class="service-content">
+    <h2>Torupとは</h2>
+    <p>海外に住む駐在者,海外旅行者向けの投稿掲示板です！</p>
+    <p>新しく住むことになった国、はじめての海外旅行、調べても調べても現地の日本語の情報が少ない...</p>
+    <p>そんなことが多々あると思います。</p>
+    <p>Torupではその国でのおすすめのレストランや観光地、知る人ぞ知る隠れ家カフェなど、</p>
+    <p>様々なものをシェアして現地での生活を豊かにしていくサービスです。</p>
+    <p>経験、体験を共有していこう！Let's Torup！</p>
+  </div>
+  <div class="servive-country">
+  </div>
+  </div>
+<% end %>
